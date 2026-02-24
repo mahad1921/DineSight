@@ -1,0 +1,23 @@
+{% if matches and matches|length > 0 %}
+<ul class="people-list">
+  {% for p in matches %}
+  <li class="people-item">
+    <a href="/user/{{ p.id }}" class="people-name-link">{{ p.username }}</a>
+
+    {% if p.id in following_ids %}
+    <form method="post" action="/unfollow" class="people-form">
+      <input type="hidden" name="user_id" value="{{ p.id }}" />
+      <button class="people-btn people-btn-unfollow">Unfollow</button>
+    </form>
+    {% else %}
+    <form method="post" action="/follow" class="people-form">
+      <input type="hidden" name="user_id" value="{{ p.id }}" />
+      <button class="people-btn">Follow</button>
+    </form>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<div class="empty-feed">no users found</div>
+{% endif %}

@@ -1,0 +1,548 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: #f4f4f7;
+}
+
+.app-shell {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  padding: 14px 18px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.app-title {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.main-area {
+  flex: 1;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 10px;
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: 14px;
+  color: #555;
+  padding: 6px 10px;
+  border-radius: 16px;
+}
+
+.nav-item:hover {
+  background: #f0f0f5;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  margin-bottom: 14px;
+}
+
+.small-line {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+/* login */
+
+.login-card {
+  margin-top: 40px;
+  padding: 18px 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+
+.login-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.login-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-card-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 15px;
+  text-align: center;
+  background: #f2f2f7;
+  cursor: pointer;
+}
+
+.login-card-btn:hover {
+  background: #e5e5f0;
+}
+
+/* feed */
+
+.feed-wrap {
+  margin-top: 10px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.checkin-card {
+  margin-bottom: 12px;
+}
+
+.checkin-form {
+  width: 100%;
+}
+
+.checkin-row {
+  display: flex;
+  gap: 8px;
+}
+
+.checkin-select {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid #d0d0dd;
+  font-size: 14px;
+  background: #fafafa;
+}
+
+.checkin-btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #007aff;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.checkin-btn:hover {
+  filter: brightness(0.95);
+}
+
+.clear-form {
+  margin-top: 8px;
+}
+
+.clear-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  background: #f5f5f8;
+  color: #555;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #ececf2;
+}
+
+.feed-card {
+  margin-top: 4px;
+}
+
+.feed-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feed-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f3;
+}
+
+.feed-item:last-child {
+  border-bottom: none;
+}
+
+.feed-main {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.feed-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.feed-dot {
+  font-size: 14px;
+  color: #999;
+}
+
+.feed-hall {
+  font-size: 14px;
+  color: #555;
+}
+
+.feed-sub {
+  font-size: 12px;
+  color: #888;
+}
+
+.empty-feed {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.feed-hall-link {
+  font-size: 14px;
+  color: #007aff;
+  text-decoration: none;
+}
+
+.feed-hall-link:hover {
+  text-decoration: underline;
+}
+
+/* hall page */
+
+.hall_wrap {
+  margin-top: 10px;
+}
+
+.hall-card {
+  margin-top: 4px;
+}
+
+.hall-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.hall-sub {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.hall-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hall-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f3;
+}
+
+.hall-item:last-child {
+  border-bottom: none;
+}
+
+.hall-main {
+  font-size: 14px;
+}
+
+.hall-name {
+  font-weight: 600;
+}
+
+.hall-subline {
+  font-size: 12px;
+  color: #888;
+}
+
+.hall-empty {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.hall-back-card {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.back_link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #007aff;
+}
+
+/* general form controls */
+
+input,
+select,
+button {
+  font-family: inherit;
+}
+
+.people-card {
+  margin-top: 10px;
+}
+
+.people-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.people-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f3;
+}
+
+.people-item:last-child {
+  border-bottom: none;
+}
+
+.people-name {
+  font-size: 14px;
+}
+
+.people-form {
+  margin: 0;
+}
+
+.people-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: #f2f2f7;
+  cursor: pointer;
+}
+
+.people-btn-unfollow {
+  background: #ffd9dd;
+}
+
+.login-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.login-card {
+  max-width: 420px;
+}
+
+.login-form {
+  margin-top: 10px;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.text-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e5e5ea;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.login-btn {
+  margin-top: 4px;
+  width: 100%;
+}
+
+.form-error {
+  font-size: 13px;
+  color: #d00;
+  margin-bottom: 6px;
+}
+
+.link-small {
+  color: #007aff;
+  text-decoration: none;
+}
+
+.link-small:hover {
+  text-decoration: underline;
+}
+
+.nav-logout-form {
+  margin: 0;
+}
+
+.nav-logout-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.people-search-form {
+  margin-bottom: 8px;
+}
+
+.people-search-input {
+  font-size: 14px;
+}
+
+.people-name-link {
+  font-weight: 500;
+  text-decoration: none;
+  color: #111;
+}
+
+.people-name-link:hover {
+  text-decoration: underline;
+}
+
+/* profile page */
+
+.profile-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-main-card {
+  padding-bottom: 14px;
+}
+
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #e5e5ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.profile-username {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-sub {
+  font-size: 13px;
+  color: #666;
+}
+
+.profile-follow-slot {
+  margin-left: auto;
+}
+
+.profile-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.profile-col-card {
+  min-height: 120px;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15)),
+    url("/static/dinesight-bg.jpg") center center / cover fixed no-repeat;
+  color: #111;
+}
+
+.app-shell {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.top-bar,
+.bottom-nav,
+.card {
+  background: rgba(248, 248, 255, 0.32);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(26px) saturate(170%);
+  -webkit-backdrop-filter: blur(26px) saturate(170%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.main-area {
+  background: transparent;
+}
+
+.top-bar {
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.bottom-nav {
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.28);
+}
+
+.checkin-card,
+.people-card,
+.profile-main-card,
+.profile-col-card {
+  background: rgba(248, 248, 255, 0.45);
+}
+
+.text-input,
+.checkin-select {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.checkin-btn,
+.people-btn,
+.people-btn-unfollow,
+.clear-btn,
+.login-btn {
+  border-radius: 999px;
+}

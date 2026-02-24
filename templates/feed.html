@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="feed-wrap">
+  <div class="small-line">logged in as {{ user.username }}</div>
+
+  <div class="card checkin-card">
+    <div class="card-title">Check in</div>
+    <form
+      method="post"
+      action="/checkin"
+      class="checkin-form"
+      hx-post="/checkin"
+      hx-target="#activity-card"
+      hx-swap="outerHTML"
+    >
+      <div class="checkin-row">
+        <select name="hall_id" class="checkin-select">
+          {% for h in halls %}
+          <option value="{{ h.id }}">{{ h.hall_name }}</option>
+          {% endfor %}
+        </select>
+        <button class="checkin-btn">Update</button>
+      </div>
+    </form>
+
+    <form
+      method="post"
+      action="/checkin/clear"
+      class="clear-form"
+      hx-post="/checkin/clear"
+      hx-target="#activity-card"
+      hx-swap="outerHTML"
+    >
+      <button class="clear-btn" type="submit">Clear check-in</button>
+    </form>
+  </div>
+
+  <div id="activity-card">
+    {% include "fragments/activity.html" %}
+  </div>
+
+  <div class="card people-card">
+    <div class="card-title">Find people</div>
+    <form
+      method="get"
+      action="/people/search"
+      class="people-search-form"
+      hx-get="/people/search"
+      hx-target="#people-results"
+      hx-trigger="keyup changed delay:300ms"
+    >
+      <input
+        name="q"
+        class="text-input people-search-input"
+        placeholder="search by username"
+        autocomplete="off"
+      />
+    </form>
+
+    <div id="people-results">
+      {% include "fragments/people_results.html" %}
+    </div>
+  </div>
+</div>
+{% endblock %}

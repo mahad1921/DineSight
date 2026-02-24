@@ -1,0 +1,21 @@
+<div class="card feed-card">
+  <div class="card-title">Activity</div>
+  {% if checkins %}
+  <ul class="feed-list">
+    {% for c in checkins %}
+    <li class="feed-item">
+      <div class="feed-main">
+        <span class="feed-name">{{ c.user.username }}</span>
+        <span class="feed-dot">·</span>
+        <a href="/dining/{{ c.hall.id }}" class="feed-hall-link">{{ c.hall.hall_name }}</a>
+      </div>
+      <div class="feed-sub">
+        {{ ((now - c.checked_at).seconds // 60) }} min ago
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <div class="empty-feed">no check-ins from people you follow yet</div>
+  {% endif %}
+</div>

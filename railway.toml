@@ -1,0 +1,11 @@
+# Railway config-as-code: build and run DineSight
+# See https://docs.railway.app/guides/config-as-code
+
+[build]
+# Python: install deps from requirements.txt (Railway/Nixpacks default)
+builder = "nixpacks"
+
+[deploy]
+# Use Procfile; or uncomment below to set start command here
+# startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+# Railway sets PORT automatically when not using Procfile

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hall_wrap">
+  <div class="small-line">logged in as {{ user.username }}</div>
+
+  <div class="card hall-card">
+    <div class="hall-title">{{ hall.hall_name }}</div>
+    <div class="hall-sub">people checked in here</div>
+    {% if checkins %}
+    <ul class="hall-list">
+      {% for c in checkins %}
+      <li class="hall-item">
+        <div class="hall-main">
+          <span class="hall-name">{{ c.user.username }}</span>
+        </div>
+        <div class="hall-subline">
+          {{ ((now - c.checked_at).seconds // 60) }} min ago
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div class="hall-empty">no one is checked in at this hall right now</div>
+    {% endif %}
+  </div>
+
+  <div class="card hall-back-card">
+    <a href="/feed" class="back_link">back to feed</a>
+  </div>
+</div>
+{% endblock %}

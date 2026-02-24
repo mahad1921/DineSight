@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-wrap">
+  <div class="card profile-main-card">
+    <div class="profile-name-row">
+      <div class="profile-avatar">
+        {{ target.username[0]|upper }}
+      </div>
+      <div>
+        <div class="profile-username">{{ target.username }}</div>
+        <div class="profile-sub">
+          joined {{ target.joined_at.date() }}
+        </div>
+        {% if latest_checkin %}
+        <div class="profile-sub">
+          last seen at {{ latest_checkin.hall.hall_name }}
+        </div>
+        {% endif %}
+      </div>
+      {% if target.id != user.id %}
+      <div class="profile-follow-slot">
+        {% if target.id in following_ids_me %}
+        <form method="post" action="/unfollow" class="people-form">
+          <input type="hidden" name="user_id" value="{{ target.id }}" />
+          <button class="people-btn people-btn-unfollow">Unfollow</button>
+        </form>
+        {% else %}
+        <form method="post" action="/follow" class="people-form">
+          <input type="hidden" name="user_id" value="{{ target.id }}" />
+          <button class="people-btn">Follow</button>
+        </form>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="profile-columns">
+    <div class="card profile-col-card">
+      <div class="card-title">Following</div>
+      {% if following %}
+      <ul class="people-list">
+        {% for u in following %}
+        <li class="people-item">
+          <a href="/user/{{ u.id }}" class="people-name-link">{{ u.username }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="empty-feed">not following anyone yet</div>
+      {% endif %}
+    </div>
+
+    <div class="card profile-col-card">
+      <div class="card-title">Followers</div>
+      {% if followers %}
+      <ul class="people-list">
+        {% for u in followers %}
+        <li class="people-item">
+          <a href="/user/{{ u.id }}" class="people-name-link">{{ u.username }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <div class="empty-feed">no followers yet</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

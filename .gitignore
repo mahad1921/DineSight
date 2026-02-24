@@ -1,0 +1,8 @@
+# DineSight – ignore local and sensitive files
+.env
+*.db
+venv/
+__pycache__/
+*.pyc
+.idea/
+.vscode/

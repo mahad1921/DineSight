@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DineSight</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="app-title">DineSight</div>
+      </header>
+
+      <main class="main-area">
+        {% block content %}{% endblock %}
+      </main>
+
+      <nav class="bottom-nav">
+        <a href="/feed" class="nav-item">Feed</a>
+
+        <form method="post" action="/logout" class="nav-logout-form">
+          <button class="nav-item nav-logout-btn">Log out</button>
+        </form>
+      </nav>
+    </div>
+  </body>
+</html>
