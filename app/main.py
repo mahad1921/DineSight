@@ -44,7 +44,11 @@ def read_user_from_cookie(req: Request, db_sess: Session) -> Optional[User]:
     cookie_val = req.cookies.get("user_id")
     if not cookie_val:
         return None
-    return db_sess.get(User, int(cookie_val))
+    try:
+        user_id = int(cookie_val)
+    except (ValueError, TypeError):
+        return None
+    return db_sess.get(User, user_id)
 
 
 def make_hash(raw: str) -> str:
@@ -341,6 +345,10 @@ def checkin_post(
     me = read_user_from_cookie(req, db_sess)
     if not me:
         return RedirectResponse("/", status_code=303)
+
+    hall_row = db_sess.get(DiningHall, hall_id)
+    if not hall_row:
+        return RedirectResponse("/feed", status_code=303)
 
     old_rows = db_sess.exec(
         select(CheckIn).where(CheckIn.user_id == me.id)

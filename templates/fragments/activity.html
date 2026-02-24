@@ -10,7 +10,7 @@
         <a href="/dining/{{ c.hall.id }}" class="feed-hall-link">{{ c.hall.hall_name }}</a>
       </div>
       <div class="feed-sub">
-        {{ ((now - c.checked_at).seconds // 60) }} min ago
+        {{ ((now - c.checked_at).total_seconds() / 60) | int }} min ago
       </div>
     </li>
     {% endfor %}

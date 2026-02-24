@@ -15,7 +15,7 @@
           <span class="hall-name">{{ c.user.username }}</span>
         </div>
         <div class="hall-subline">
-          {{ ((now - c.checked_at).seconds // 60) }} min ago
+          {{ ((now - c.checked_at).total_seconds() / 60) | int }} min ago
         </div>
       </li>
       {% endfor %}
