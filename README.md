@@ -2,8 +2,7 @@
 
 # DineSight
 
-### Where your friends are eating, what's on the menu tonight,
-### and what to put on your plate.
+### Where your friends are eating, what's on the menu tonight,<br>and what to put on your plate.
 
 A live dining app for UMass Amherst.
 
